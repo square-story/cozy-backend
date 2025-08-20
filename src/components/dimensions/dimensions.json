@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_dimensions_dimensions",
+  "info": {
+    "displayName": "dimensions",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "Width": {
+      "type": "decimal"
+    },
+    "Height": {
+      "type": "decimal"
+    },
+    "Depth": {
+      "type": "decimal"
+    }
+  },
+  "config": {}
+}

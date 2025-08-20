@@ -12,13 +12,15 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
       "type": "text"
     },
     "price": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "originalPrice": {
       "type": "integer"
@@ -34,7 +36,8 @@
     "category": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::category.category"
+      "target": "api::category.category",
+      "mappedBy": "product"
     },
     "inStock": {
       "type": "boolean",
@@ -43,6 +46,37 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "colors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::color.color",
+      "mappedBy": "products"
+    },
+    "materials": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::material.material",
+      "mappedBy": "products"
+    },
+    "Dimensions": {
+      "type": "component",
+      "component": "dimensions.dimensions",
+      "repeatable": false
+    },
+    "isNew": {
+      "type": "boolean",
+      "default": false
+    },
+    "isBestSeller": {
+      "type": "boolean",
+      "default": false
+    },
+    "features": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feature.feature",
+      "mappedBy": "products"
     }
   }
 }
